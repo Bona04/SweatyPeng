@@ -10,10 +10,13 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed;
     public float jumpPower;
 
+    Animator anim;
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -33,7 +36,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            anim.SetBool("isJumping", true); // animation jumping
         }
+
+        //animation walking
+        if (rigid.velocity.normalized.x == 0)
+            anim.SetBool("isWalking", false);
+        else
+            anim.SetBool("isWalking", true);
+
     }
 
     void FixedUpdate()
@@ -51,6 +62,18 @@ public class PlayerController : MonoBehaviour
         {
             rigid.velocity = new Vector2(-maxSpeed, rigid.velocity.y);
         }
+        //Landing Platform
+        if (rigid.velocity.y < 0)
+        {
+            Debug.DrawRay(rigid.position, Vector3.down, new Color(0, 1, 0));
+            RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1);
+            if (rayHit.collider != null)
+            {
+                if (rayHit.distance < 0.5f)
+                    anim.SetBool("isJumping", false);
+            }
+        }
+
 
     }
 }
