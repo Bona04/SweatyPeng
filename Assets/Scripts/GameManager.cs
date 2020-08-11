@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject UIYouDied;
     public GameObject UIRestartButton;
 
+    
     public void HealthDownEnemy() //플레이어 체력 감소
     {
         if (heart > 0) {

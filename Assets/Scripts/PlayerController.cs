@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = Input.GetAxisRaw("Horizontal") == -1;
 
         //jump
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) && !anim.GetBool("isJumping"))
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true); // animation jumping
@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
             //Damaged 
             OnDamaged(collision.transform.position);
         }
+
     }
     void OffDamaged()
     {
