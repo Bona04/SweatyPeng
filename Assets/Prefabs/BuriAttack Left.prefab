@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1365167747947168861}
   - component: {fileID: 1815098033}
   - component: {fileID: 1815098032}
-  - component: {fileID: 1815098031}
+  - component: {fileID: -1560505908321168510}
   m_Layer: 0
-  m_Name: BuriAttack
+  m_Name: BuriAttack Left
   m_TagString: normalAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 92c49724a418c3c4194f31e3b2089798, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -118,10 +118,10 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.21876204, y: 0.029348398}
-  m_Size: {x: 0.44001147, y: 0.63037634}
+  m_Offset: {x: -0.2342881, y: 0.03743857}
+  m_Size: {x: 0.41843656, y: 0.62338805}
   m_Direction: 0
---- !u!114 &1815098031
+--- !u!114 &-1560505908321168510
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8217341030255196137}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6222f04711f846b45b223b0fc3de5803, type: 3}
+  m_Script: {fileID: 11500000, guid: ad95e6abd2995884d9afdba2bb46de1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 9

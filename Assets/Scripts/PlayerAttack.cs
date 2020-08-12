@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public GameObject attack;
-    public Transform pos;
+    public GameObject rightAttack;
+    public GameObject leftAttack;
+    public SpriteRenderer spriteRenderer;
+    public Transform rightPos;
+    public Transform leftPos;
     public float cooltime;
     private float curtime;
     Animator anime;
@@ -15,6 +18,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         anime = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -25,7 +29,10 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Z)) //기본공격
             {
                 anime.SetTrigger("Attack");
-                Instantiate(attack, pos.position, transform.rotation);
+                if (!spriteRenderer.flipX)
+                    Instantiate(rightAttack, rightPos.position, transform.rotation);
+                else
+                    Instantiate(leftAttack, leftPos.position, transform.rotation);
 
                 curtime = cooltime;
             }
