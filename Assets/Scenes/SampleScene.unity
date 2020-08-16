@@ -5445,7 +5445,7 @@ GameObject:
   - component: {fileID: 465230163}
   - component: {fileID: 465230162}
   - component: {fileID: 465230161}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Snake (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -5460,7 +5460,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465230159}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.733, y: -0.28, z: 5.5561523}
+  m_LocalPosition: {x: -6.733, y: -0.28, z: 0}
   m_LocalScale: {x: 1.1547426, y: 1.1547426, z: 1.1547426}
   m_Children: []
   m_Father: {fileID: 651244955}
@@ -5535,6 +5535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextMove: 0
+  enemyHealth: 3
 --- !u!212 &465230165
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13176,7 +13177,7 @@ GameObject:
   - component: {fileID: 1155045745}
   - component: {fileID: 1155045744}
   - component: {fileID: 1155045743}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Snake (3)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -13191,7 +13192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155045741}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.925, y: 0.721, z: 5.5561523}
+  m_LocalPosition: {x: 5.925, y: 0.721, z: 0}
   m_LocalScale: {x: 1.1547426, y: 1.1547426, z: 1.1547426}
   m_Children: []
   m_Father: {fileID: 651244955}
@@ -13266,6 +13267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextMove: 0
+  enemyHealth: 3
 --- !u!212 &1155045747
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18187,7 +18189,7 @@ GameObject:
   - component: {fileID: 1563281387}
   - component: {fileID: 1563281386}
   - component: {fileID: 1563281391}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Snake
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -18244,6 +18246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextMove: 0
+  enemyHealth: 3
 --- !u!212 &1563281389
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18302,7 +18305,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563281385}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.006079, y: 0.93377817, z: 5.5561523}
+  m_LocalPosition: {x: -18.006079, y: 0.93377817, z: 0}
   m_LocalScale: {x: 1.1547426, y: 1.1547426, z: 1.1547426}
   m_Children: []
   m_Father: {fileID: 651244955}
