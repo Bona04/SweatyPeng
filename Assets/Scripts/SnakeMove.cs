@@ -9,7 +9,7 @@ public class SnakeMove : MonoBehaviour
     CapsuleCollider2D capsuleCollider;
 
     public int nextMove;
-
+    public int enemyHealth;
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -57,7 +57,7 @@ public class SnakeMove : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         //기본공격과 충돌
-        if (collision.gameObject.tag == "normalAttack")
+        if (collision.gameObject.tag == "normalAttack" && enemyHealth > 0)
         {
             //Damaged 
             OnDamaged(collision.transform.position);
@@ -66,18 +66,23 @@ public class SnakeMove : MonoBehaviour
     private void OnDamaged(Vector2 targetPos)
     {
         //health down
+        enemyHealth--;
+        if (enemyHealth <= 0)
+            EnemyDie();
+        else
+        {
+            //레이어 변경
+            gameObject.layer = 12;
 
-        //레이어 변경
-        gameObject.layer = 12;
+            spriteRenderer.color = new Color(1, 1, 1, 0.4f); //마지막이 투명도
 
-        spriteRenderer.color = new Color(1, 1, 1, 0.4f); //마지막이 투명도
+            //튕겨 나감
+            int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
+            rigid.AddForce(new Vector2(dirc, 1) * 2, ForceMode2D.Impulse);
 
-        //튕겨 나감
-        int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
-        rigid.AddForce(new Vector2(dirc, 1) * 2, ForceMode2D.Impulse);
-
-        //Invoke("OffDamagedEnemy", 3); //무적시간
-        StartCoroutine("DamagedDelay");
+            //Invoke("OffDamagedEnemy", 3); //무적시간
+            StartCoroutine("DamagedDelay");
+        }
     }
     IEnumerator DamagedDelay()
     {
@@ -85,5 +90,22 @@ public class SnakeMove : MonoBehaviour
 
         gameObject.layer = 11; //레이어 다시 돌려놓음
         spriteRenderer.color = new Color(1, 1, 1, 1);
+    }
+    void EnemyDie()
+    {
+        //Sprite Alpha
+        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
+        //Sprite Flip Y
+        spriteRenderer.flipY = true;
+        //Collider Disable
+        capsuleCollider.enabled = false;
+        //Die Effect Jump
+        rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+        //Destroy
+        Invoke("DeActive", 5);
+    }
+    void DeActive()
+    {
+        gameObject.SetActive(false);
     }
 }
