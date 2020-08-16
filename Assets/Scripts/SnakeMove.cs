@@ -54,4 +54,36 @@ public class SnakeMove : MonoBehaviour
         CancelInvoke();
         Invoke("Think", 2);
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        //기본공격과 충돌
+        if (collision.gameObject.tag == "normalAttack")
+        {
+            //Damaged 
+            OnDamaged(collision.transform.position);
+        }
+    }
+    private void OnDamaged(Vector2 targetPos)
+    {
+        //health down
+
+        //레이어 변경
+        gameObject.layer = 12;
+
+        spriteRenderer.color = new Color(1, 1, 1, 0.4f); //마지막이 투명도
+
+        //튕겨 나감
+        int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
+        rigid.AddForce(new Vector2(dirc, 1) * 2, ForceMode2D.Impulse);
+
+        //Invoke("OffDamagedEnemy", 3); //무적시간
+        StartCoroutine("DamagedDelay");
+    }
+    IEnumerator DamagedDelay()
+    {
+        yield return new WaitForSeconds(2f);
+
+        gameObject.layer = 11; //레이어 다시 돌려놓음
+        spriteRenderer.color = new Color(1, 1, 1, 1);
+    }
 }

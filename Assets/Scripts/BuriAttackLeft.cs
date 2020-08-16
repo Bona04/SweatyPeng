@@ -19,7 +19,7 @@ public class BuriAttackLeft : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         //기본공격이 플랫폼에 맞는 경우
-        if (collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == 8 || collision.gameObject.layer == 11)
         {
             Destroy(gameObject);
         }
