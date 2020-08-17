@@ -5097,15 +5097,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432149176}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.215942, y: 5.542497, z: -33.32422}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.440136, y: 5.3162756, z: -27.768066}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1739439412}
   - {fileID: 944384996}
   - {fileID: 1779834471}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 651244955}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &438565090
 GameObject:
@@ -7930,6 +7930,7 @@ Transform:
   - {fileID: 1563281390}
   - {fileID: 465230160}
   - {fileID: 1155045742}
+  - {fileID: 432149177}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9481,7 +9482,7 @@ Transform:
   m_Children:
   - {fileID: 13746919}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &776964841
 GameObject:
@@ -19849,7 +19850,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1689273929}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2077099876}
+        m_MethodName: GameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1689273929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20331,6 +20343,7 @@ GameObject:
   - component: {fileID: 1739439413}
   - component: {fileID: 1739439414}
   - component: {fileID: 1739439415}
+  - component: {fileID: 1739439416}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Enemy
@@ -20437,6 +20450,32 @@ MonoBehaviour:
   endPos: {fileID: 1779834471}
   desPos: {fileID: 0}
   speed: 2
+--- !u!61 &1739439416
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739439411}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0031259507, y: -0.4656484}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.13, y: 1}
+    newSize: {x: 0.13, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.13000008, y: 0.068703204}
+  m_EdgeRadius: 0
 --- !u!1 &1741895675
 GameObject:
   m_ObjectHideFlags: 0
@@ -21055,7 +21094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1798946763
 RectTransform:
   m_ObjectHideFlags: 0
