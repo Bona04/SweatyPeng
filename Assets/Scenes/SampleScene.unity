@@ -25258,7 +25258,7 @@ GameObject:
   - component: {fileID: 2053197281}
   - component: {fileID: 2053197280}
   m_Layer: 5
-  m_Name: Button
+  m_Name: RestartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25519,6 +25519,7 @@ MonoBehaviour:
   - {fileID: 859259495}
   UIYouDied: {fileID: 311898022}
   restartButton: {fileID: 0}
+  titleScreen: {fileID: 0}
 --- !u!4 &2077099877
 Transform:
   m_ObjectHideFlags: 0

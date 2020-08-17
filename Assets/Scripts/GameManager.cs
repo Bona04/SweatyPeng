@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public Image[] UIheart;
     public GameObject UIYouDied;
     public Button restartButton;
+    public GameObject titleScreen;
+
+    //private bool isGameActive;
 
     
     public void HealthDownEnemy() //플레이어 체력 감소
@@ -32,6 +35,12 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void GameStart()
+    {
+        //isGameActive = true;
+        titleScreen.gameObject.SetActive(false);
     }
 
 }
