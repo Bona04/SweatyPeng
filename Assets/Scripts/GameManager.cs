@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
     //UI
     public Image[] UIheart;
     public GameObject UIYouDied;
-    public GameObject UIRestartButton;
+    public Button restartButton;
 
     
     public void HealthDownEnemy() //플레이어 체력 감소
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
         else
         {
             //죽으면 다시 시작하기 버튼 활성화
-            UIRestartButton.SetActive(true);
+            restartButton.gameObject.SetActive(true);
             //죽으면 유다이 메시지 띄우기
             UIYouDied.SetActive(true);
         }
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
     //재시작하기
     public void Restart()
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
