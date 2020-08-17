@@ -25518,8 +25518,8 @@ MonoBehaviour:
   - {fileID: 2022355393}
   - {fileID: 859259495}
   UIYouDied: {fileID: 311898022}
-  restartButton: {fileID: 0}
-  titleScreen: {fileID: 0}
+  restartButton: {fileID: 2053197280}
+  titleScreen: {fileID: 1798946762}
 --- !u!4 &2077099877
 Transform:
   m_ObjectHideFlags: 0
