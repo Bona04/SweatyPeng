@@ -84,6 +84,13 @@ public class PlayerController : MonoBehaviour
             //Damaged 
             OnDamaged(collision.transform.position);
         }
+        else if (collision.gameObject.tag =="Water")
+        {
+            //다시 시작하기 버튼 활성화
+            gameManager.restartButton.gameObject.SetActive(true);
+            //유다이 메시지 띄우기
+            gameManager.UIYouDied.SetActive(true);
+        }
 
     }
     void OffDamaged()
