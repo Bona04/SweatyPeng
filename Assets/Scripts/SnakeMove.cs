@@ -8,6 +8,8 @@ public class SnakeMove : MonoBehaviour
     SpriteRenderer spriteRenderer;
     CapsuleCollider2D capsuleCollider;
 
+    public GameManager gameManager;
+
     public int nextMove;
     public int enemyHealth;
     void Start()
@@ -61,6 +63,7 @@ public class SnakeMove : MonoBehaviour
         {
             //Damaged 
             OnDamaged(collision.transform.position);
+            gameManager.FilledIce();
         }
     }
     private void OnDamaged(Vector2 targetPos)

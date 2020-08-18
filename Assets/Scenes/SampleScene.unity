@@ -862,8 +862,8 @@ RectTransform:
   - {fileID: 2022355392}
   - {fileID: 859259494}
   - {fileID: 1246792705}
-  - {fileID: 1061562666}
   - {fileID: 790996946}
+  - {fileID: 1061562666}
   - {fileID: 311898023}
   - {fileID: 1798946763}
   - {fileID: 2053197279}
@@ -9117,8 +9117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1848251000}
   speed: 3
-  size: {x: 76, y: 10}
-  center: {x: 25.37021, y: 0}
+  size: {x: 135, y: 10}
+  center: {x: 54.7, y: 0}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -14197,7 +14197,7 @@ GameObject:
   - component: {fileID: 790996948}
   - component: {fileID: 790996947}
   m_Layer: 5
-  m_Name: Ice3
+  m_Name: Ice2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14215,7 +14215,7 @@ RectTransform:
   m_LocalScale: {x: 0.35038, y: 0.35038, z: 0.35038}
   m_Children: []
   m_Father: {fileID: 51586226}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -14243,11 +14243,11 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -856085545168688419, guid: 42842901a3d8e8c42a4d8fa35d077e1d,
     type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -18405,7 +18405,7 @@ GameObject:
   - component: {fileID: 1061562668}
   - component: {fileID: 1061562667}
   m_Layer: 5
-  m_Name: Ice2
+  m_Name: Ice3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18423,7 +18423,7 @@ RectTransform:
   m_LocalScale: {x: 0.35038, y: 0.35038, z: 0.35038}
   m_Children: []
   m_Father: {fileID: 51586226}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -18451,11 +18451,11 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -856085545168688419, guid: 42842901a3d8e8c42a4d8fa35d077e1d,
     type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -22174,11 +22174,11 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: -856085545168688419, guid: 42842901a3d8e8c42a4d8fa35d077e1d,
     type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -37523,10 +37523,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heart: 3
+  Ice: 0
   UIheart:
   - {fileID: 2101442502}
   - {fileID: 2022355393}
   - {fileID: 859259495}
+  UIIce:
+  - {fileID: 1246792706}
+  - {fileID: 790996947}
+  - {fileID: 1061562667}
   UIYouDied: {fileID: 311898022}
   restartButton: {fileID: 2053197280}
   titleScreen: {fileID: 1798946762}

@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public int heart; //체력 수
+    public int Ice; //얼음 공격 수
 
     //UI
     public Image[] UIheart;
+    public Image[] UIIce;
     public GameObject UIYouDied;
     public Button restartButton;
     public GameObject titleScreen;
@@ -37,6 +39,22 @@ public class GameManager : MonoBehaviour
     public void GameStart()
     {
         titleScreen.gameObject.SetActive(false);
+    }
+
+    public void FilledIce()
+    {
+        if (UIIce[0].fillAmount != 1)
+        {
+            UIIce[0].fillAmount += 0.2f;
+        }
+        else if (UIIce[0].fillAmount == 1 && UIIce[1].fillAmount != 1)
+        {
+            UIIce[1].fillAmount += 0.2f;
+        }
+        else if (UIIce[0].fillAmount == 1 && UIIce[1].fillAmount == 1 && UIIce[2].fillAmount != 1)
+        {
+            UIIce[2].fillAmount += 0.2f;
+        }
     }
 
 }

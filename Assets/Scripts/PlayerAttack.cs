@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public GameManager gameManager;
     public GameObject rightAttack;
     public GameObject leftAttack;
+    public GameObject rightIceAttack;
+    public GameObject leftIceAttack;
     public SpriteRenderer spriteRenderer;
     public Transform rightPos;
     public Transform leftPos;
@@ -36,8 +39,38 @@ public class PlayerAttack : MonoBehaviour
 
                 curtime = cooltime;
             }
+            else if(Input.GetKeyDown(KeyCode.X)) //얼음공격
+            {
+                if(gameManager.UIIce[2].fillAmount == 1) //꽉 찬 경우
+                {
+                    IceAttack();
+                    curtime = cooltime;
+                    gameManager.UIIce[2].fillAmount = 0;
+                }
+                else if(gameManager.UIIce[1].fillAmount ==1) //두번째 꺼까지 찬 경우
+                {
+                    IceAttack();
+                    curtime = cooltime;
+                    gameManager.UIIce[1].fillAmount = gameManager.UIIce[2].fillAmount;
+                    gameManager.UIIce[2].fillAmount = 0;
+                }
+                else if(gameManager.UIIce[0].fillAmount ==1)
+                {
+                    IceAttack();
+                    curtime = cooltime;
+                    gameManager.UIIce[0].fillAmount = gameManager.UIIce[1].fillAmount;
+                    gameManager.UIIce[1].fillAmount = 0;
+                }
+            }
         }
         curtime -= Time.deltaTime;
-
+    }
+    void IceAttack()
+    {
+        anime.SetTrigger("Attack");
+        if (!spriteRenderer.flipX)
+            Instantiate(rightIceAttack, rightPos.position, transform.rotation);
+        else
+            Instantiate(leftIceAttack, leftPos.position, transform.rotation);
     }
 }
