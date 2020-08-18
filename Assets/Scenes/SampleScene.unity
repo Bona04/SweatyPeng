@@ -8235,6 +8235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad68991ed2cbdf642b82071ca130f4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 2077099876}
   nextMove: 0
   enemyHealth: 3
 --- !u!212 &465230165
@@ -10283,6 +10284,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 709928254178640740, guid: 3f0edabff2a349b44bd1fd67c8f19d79,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 2077099876}
     - target: {fileID: 709928254178640742, guid: 3f0edabff2a349b44bd1fd67c8f19d79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11597,6 +11603,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 709928254178640740, guid: 3f0edabff2a349b44bd1fd67c8f19d79,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 2077099876}
     - target: {fileID: 709928254178640742, guid: 3f0edabff2a349b44bd1fd67c8f19d79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20272,6 +20283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad68991ed2cbdf642b82071ca130f4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 2077099876}
   nextMove: 0
   enemyHealth: 3
 --- !u!212 &1155045747
@@ -21266,6 +21278,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake
       objectReference: {fileID: 0}
+    - target: {fileID: 709928254178640740, guid: 3f0edabff2a349b44bd1fd67c8f19d79,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 2077099876}
     - target: {fileID: 709928254178640742, guid: 3f0edabff2a349b44bd1fd67c8f19d79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23333,7 +23350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303941634}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.370212, y: 1.9071474, z: 2.0453124}
+  m_LocalPosition: {x: -9.370212, y: 1.9071474, z: 2}
   m_LocalScale: {x: 2, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 1473518651}
@@ -30622,6 +30639,7 @@ GameObject:
   - component: {fileID: 1739439414}
   - component: {fileID: 1739439415}
   - component: {fileID: 1739439416}
+  - component: {fileID: 1739439417}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Enemy
@@ -30754,6 +30772,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13000008, y: 0.068703204}
   m_EdgeRadius: 0
+--- !u!114 &1739439417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739439411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3b839c5a254634a8101a7d8e513484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 2077099876}
 --- !u!1 &1739883248
 GameObject:
   m_ObjectHideFlags: 0
@@ -33004,9 +33035,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b527622eb417d419be80e1f0cb3b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 2077099876}
   rightAttack: {fileID: 8217341030255196137, guid: e606d4ac28bd1604ba198de315a68461,
     type: 3}
   leftAttack: {fileID: 8217341030255196137, guid: 7ec8ab9fe5ea29b44a059f01c67d05f3,
+    type: 3}
+  rightIceAttack: {fileID: 1988995905382347452, guid: 587acee539615a1498c98028867af88d,
+    type: 3}
+  leftIceAttack: {fileID: 5443015608373398838, guid: 302bec8187d7b1744bc6cac8f524f3e4,
     type: 3}
   spriteRenderer: {fileID: 1848250999}
   rightPos: {fileID: 306246704}
@@ -33430,6 +33466,7 @@ GameObject:
   - component: {fileID: 1880948346}
   - component: {fileID: 1880948345}
   - component: {fileID: 1880948344}
+  - component: {fileID: 1880948348}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Enemy
@@ -33562,6 +33599,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1880948348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880948342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3b839c5a254634a8101a7d8e513484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 2077099876}
 --- !u!1 &1884286038
 GameObject:
   m_ObjectHideFlags: 0
@@ -39579,6 +39629,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake
       objectReference: {fileID: 0}
+    - target: {fileID: 709928254178640740, guid: 3f0edabff2a349b44bd1fd67c8f19d79,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 2077099876}
     - target: {fileID: 709928254178640742, guid: 3f0edabff2a349b44bd1fd67c8f19d79,
         type: 3}
       propertyPath: m_LocalPosition.x

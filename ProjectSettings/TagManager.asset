@@ -8,6 +8,7 @@ TagManager:
   - Water
   - normalAttack
   - Platform
+  - IceAttack
   layers:
   - Default
   - TransparentFX
