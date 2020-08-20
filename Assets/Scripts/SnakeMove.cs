@@ -65,6 +65,10 @@ public class SnakeMove : MonoBehaviour
             OnDamaged(collision.transform.position);
             gameManager.FilledIce();
         }
+        if(collision.gameObject.tag =="IceAttack" && enemyHealth >0)
+        {
+            EnemyDie();
+        }
     }
     private void OnDamaged(Vector2 targetPos)
     {
