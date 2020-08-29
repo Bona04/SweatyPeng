@@ -12,11 +12,18 @@ public class SnakeMove : MonoBehaviour
 
     public int nextMove;
     public int enemyHealth;
+
+    private AudioSource enemyAudio;
+
+    public AudioClip attackedSound;
+    public AudioClip dieSound;
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
+        enemyAudio = GetComponent<AudioSource>();
 
         Invoke("Think", 5); //5초 뒤에 호출
     }
@@ -61,11 +68,12 @@ public class SnakeMove : MonoBehaviour
         //기본공격과 충돌
         if (collision.gameObject.tag == "normalAttack" && enemyHealth > 0)
         {
+            enemyAudio.PlayOneShot(attackedSound, 1.0f);//공격받음 사운드
             //Damaged 
             OnDamaged(collision.transform.position);
             gameManager.FilledIce();
         }
-        if(collision.gameObject.tag =="IceAttack" && enemyHealth >0)
+        if (collision.gameObject.tag == "IceAttack" && enemyHealth > 0)
         {
             EnemyDie();
         }
@@ -110,6 +118,8 @@ public class SnakeMove : MonoBehaviour
         rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
         //Destroy
         Invoke("DeActive", 5);
+
+        enemyAudio.PlayOneShot(dieSound, 1.0f);//죽음 사운드
     }
     void DeActive()
     {

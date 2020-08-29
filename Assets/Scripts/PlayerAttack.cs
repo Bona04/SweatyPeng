@@ -2,75 +2,117 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class SnakeMove : MonoBehaviour
 {
+    Rigidbody2D rigid;
+    SpriteRenderer spriteRenderer;
+    CapsuleCollider2D capsuleCollider;
+
     public GameManager gameManager;
-    public GameObject rightAttack;
-    public GameObject leftAttack;
-    public GameObject rightIceAttack;
-    public GameObject leftIceAttack;
-    public SpriteRenderer spriteRenderer;
-    public Transform rightPos;
-    public Transform leftPos;
-    public float cooltime;
-    private float curtime;
-    Animator anime;
 
-
-    // Start is called before the first frame update
+    public int nextMove;
+    public int enemyHealth;
     void Start()
     {
-        anime = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
+
+        Invoke("Think", 5); //5초 뒤에 호출
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (curtime <= 0)
-        {
-            if (Input.GetKeyDown(KeyCode.Z)) //기본공격
-            {
-                anime.SetTrigger("Attack");
-                if (!spriteRenderer.flipX)
-                    Instantiate(rightAttack, rightPos.position, transform.rotation);
-                else
-                    Instantiate(leftAttack, leftPos.position, transform.rotation);
+        rigid.velocity = new Vector2(nextMove, rigid.velocity.y);   //기본 움직임
 
-                curtime = cooltime;
-            }
-            else if(Input.GetKeyDown(KeyCode.X)) //얼음공격
-            {
-                if(gameManager.UIIce[2].fillAmount == 1) //꽉 찬 경우
-                {
-                    IceAttack();
-                    curtime = cooltime;
-                    gameManager.UIIce[2].fillAmount = 0;
-                }
-                else if(gameManager.UIIce[1].fillAmount ==1) //두번째 꺼까지 찬 경우
-                {
-                    IceAttack();
-                    curtime = cooltime;
-                    gameManager.UIIce[1].fillAmount = gameManager.UIIce[2].fillAmount;
-                    gameManager.UIIce[2].fillAmount = 0;
-                }
-                else if(gameManager.UIIce[0].fillAmount ==1)
-                {
-                    IceAttack();
-                    curtime = cooltime;
-                    gameManager.UIIce[0].fillAmount = gameManager.UIIce[1].fillAmount;
-                    gameManager.UIIce[1].fillAmount = 0;
-                }
-            }
+        //지형 체크
+        Vector2 frontVec = new Vector2(rigid.position.x + nextMove * 0.3f, rigid.position.y);
+        Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
+        RaycastHit2D rayHit = Physics2D.Raycast(frontVec, Vector3.down, 1, LayerMask.GetMask("Platform"));
+        if (rayHit.collider == null)
+        {
+            //Debug.Log("경고! 이 앞 낭떠러지.");
+            Turn();
         }
-        curtime -= Time.deltaTime;
     }
-    void IceAttack()
+    void Think() //재귀함수
     {
-        anime.SetTrigger("Attack");
-        if (!spriteRenderer.flipX)
-            Instantiate(rightIceAttack, rightPos.position, transform.rotation);
+        //Set Next Active
+        nextMove = Random.Range(-1, 2); //최소값, 최대값-1
+
+
+        //Flip Sprite
+        if (nextMove != 0)
+            spriteRenderer.flipX = nextMove == 1;
+
+        //Recursive
+        float nextThinkTime = Random.Range(2f, 5f);
+        Invoke("Think", nextThinkTime);
+    }
+    void Turn()
+    {
+        nextMove = nextMove * -1; //방향 정반대로 바꿔줌.
+        spriteRenderer.flipX = nextMove == 1;
+        CancelInvoke();
+        Invoke("Think", 2);
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        //기본공격과 충돌
+        if (collision.gameObject.tag == "normalAttack" && enemyHealth > 0)
+        {
+            //Damaged 
+            OnDamaged(collision.transform.position);
+            gameManager.FilledIce();
+        }
+        if (collision.gameObject.tag == "IceAttack" && enemyHealth > 0)
+        {
+            EnemyDie();
+        }
+    }
+    private void OnDamaged(Vector2 targetPos)
+    {
+        //health down
+        enemyHealth--;
+        if (enemyHealth <= 0)
+            EnemyDie();
         else
-            Instantiate(leftIceAttack, leftPos.position, transform.rotation);
+        {
+            //레이어 변경
+            gameObject.layer = 12;
+
+            spriteRenderer.color = new Color(1, 1, 1, 0.4f); //마지막이 투명도
+
+            //튕겨 나감
+            int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1;
+            rigid.AddForce(new Vector2(dirc, 1) * 2, ForceMode2D.Impulse);
+
+            //Invoke("OffDamagedEnemy", 3); //무적시간
+            StartCoroutine("DamagedDelay");
+        }
+    }
+    IEnumerator DamagedDelay()
+    {
+        yield return new WaitForSeconds(2f);
+
+        gameObject.layer = 11; //레이어 다시 돌려놓음
+        spriteRenderer.color = new Color(1, 1, 1, 1);
+    }
+    void EnemyDie()
+    {
+        //Sprite Alpha
+        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
+        //Sprite Flip Y
+        spriteRenderer.flipY = true;
+        //Collider Disable
+        capsuleCollider.enabled = false;
+        //Die Effect Jump
+        rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+        //Destroy
+        Invoke("DeActive", 5);
+    }
+    void DeActive()
+    {
+        gameObject.SetActive(false);
     }
 }

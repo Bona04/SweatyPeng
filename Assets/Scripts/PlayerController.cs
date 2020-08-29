@@ -8,16 +8,21 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
 
+    private AudioSource playerAudio;
+
     public float maxSpeed;
     public float jumpPower;
 
     Animator anim;
+
+    public AudioClip jumpSound;
 
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
 
@@ -38,6 +43,7 @@ public class PlayerController : MonoBehaviour
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true); // animation jumping
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
 
         //animation walking
