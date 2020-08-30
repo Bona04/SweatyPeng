@@ -12,11 +12,18 @@ public class SnakeMove : MonoBehaviour
 
     public int nextMove;
     public int enemyHealth;
+
+    private AudioSource enemyAudio;
+
+    public AudioClip enemyAttackSound;
+    public AudioClip enemyDieSound;
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
+        enemyAudio = GetComponent<AudioSource>();
 
         Invoke("Think", 5); //5초 뒤에 호출
     }
@@ -89,6 +96,9 @@ public class SnakeMove : MonoBehaviour
 
             //Invoke("OffDamagedEnemy", 3); //무적시간
             StartCoroutine("DamagedDelay");
+
+            //snake attacked sound
+            enemyAudio.PlayOneShot(enemyAttackSound, 1.0f);
         }
     }
     IEnumerator DamagedDelay()
@@ -110,6 +120,9 @@ public class SnakeMove : MonoBehaviour
         rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
         //Destroy
         Invoke("DeActive", 5);
+
+        //snake die sound
+        enemyAudio.PlayOneShot(enemyDieSound, 0.5f);
     }
     void DeActive()
     {
