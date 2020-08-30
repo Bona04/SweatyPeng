@@ -100,8 +100,6 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   nextMove: 0
   enemyHealth: 3
-  attackedSound: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
-  dieSound: {fileID: 8300000, guid: 5fdb13d3756c84fecac96f5a2d124370, type: 3}
 --- !u!50 &709928254178640739
 Rigidbody2D:
   serializedVersion: 4
