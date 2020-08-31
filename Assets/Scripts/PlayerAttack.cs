@@ -16,12 +16,17 @@ public class PlayerAttack : MonoBehaviour
     private float curtime;
     Animator anime;
 
+    private AudioSource playerAudio;
+
+    public AudioClip basicAttackSound;
+    public AudioClip iceAttackSound;
 
     // Start is called before the first frame update
     void Start()
     {
         anime = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,6 +43,8 @@ public class PlayerAttack : MonoBehaviour
                     Instantiate(leftAttack, leftPos.position, transform.rotation);
 
                 curtime = cooltime;
+
+                playerAudio.PlayOneShot(basicAttackSound, 0.5f);//basic attack sound effect
             }
             else if(Input.GetKeyDown(KeyCode.X)) //얼음공격
             {
@@ -61,6 +68,8 @@ public class PlayerAttack : MonoBehaviour
                     gameManager.UIIce[0].fillAmount = gameManager.UIIce[1].fillAmount;
                     gameManager.UIIce[1].fillAmount = 0;
                 }
+
+                playerAudio.PlayOneShot(iceAttackSound, 1.0f);//ice attack sound effect
             }
         }
         curtime -= Time.deltaTime;
