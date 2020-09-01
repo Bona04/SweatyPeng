@@ -9,6 +9,8 @@ public class Teleport : MonoBehaviour
 
     public GameObject toObj;
 
+    public int mapNum;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
@@ -29,6 +31,8 @@ public class Teleport : MonoBehaviour
     {
         yield return null;
         targetObj.transform.position = toObj.transform.position;
+
+        Camera.main.GetComponent<CameraMove>().ChangeLimit(mapNum);
     }
     // Start is called before the first frame update
     void Start()

@@ -7,8 +7,9 @@ public class CameraMove : MonoBehaviour
     public Transform target;
     public float speed;
 
-    public Vector2 size;
-    public Vector2 center;
+    Transform CameraLimit;
+
+    public Transform[] Limit;
 
     float height;
     float width;
@@ -17,13 +18,13 @@ public class CameraMove : MonoBehaviour
     {
         height =  Camera.main.orthographicSize;
         width = height * Screen.width / Screen.height;
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(center, size);
+        ChangeLimit(0);
     }
 
+    public void ChangeLimit(int x)
+    {
+        CameraLimit = Limit[x];
+    }
 
     void LateUpdate()
     {
@@ -31,11 +32,11 @@ public class CameraMove : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * speed);
         //transform.position = new Vector3(transform.position.x, transform.position.y, -10f);
 
-        float lx = size.x * 0.5f - width;
-        float clampX = Mathf.Clamp(transform.position.x, -lx + center.x, lx + center.x);
+        float lx = CameraLimit.localScale.x * 0.5f - width;
+        float clampX = Mathf.Clamp(transform.position.x, -lx + CameraLimit.position.x, lx + CameraLimit.position.x);
 
-        float ly = size.y * 0.5f - height;
-        float clampY = Mathf.Clamp(transform.position.y, -ly + center.y, ly + center.y);
+        float ly = CameraLimit.localScale.y * 0.5f - height;
+        float clampY = Mathf.Clamp(transform.position.y, -ly + CameraLimit.position.y, ly + CameraLimit.position.y);
 
         transform.position = new Vector3(clampX, clampY, -10f);
 
