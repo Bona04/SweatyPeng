@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     public float maxSpeed;
-    public float jumpPower;
+    //public float jumpPower;
 
     Animator anim;
 
@@ -17,14 +17,51 @@ public class PlayerController : MonoBehaviour
 
     public AudioClip jumpSound;
 
+    //점프 관련 변수들
+    [SerializeField] float m_jumpForce = 0f;
+    [SerializeField] int m_maxJumpCount = 0;
+    int m_jumpCount = 0;
+    float m_distance = 0f;
+    [SerializeField] LayerMask m_layerMask = 0;
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
-    }
 
+        //점프관련
+        m_distance = GetComponent<CapsuleCollider2D>().bounds.extents.y + 0.05f;
+    }
+    void TryJump()
+    {
+        if (Input.GetKeyDown(KeyCode.C) && !anim.GetBool("isJumping"))
+        {
+            if (m_jumpCount < m_maxJumpCount)
+            {
+                m_jumpCount++;
+                rigid.velocity = Vector2.up * m_jumpForce;
+                anim.SetBool("isJumping", true); // animation jumping
+                playerAudio.PlayOneShot(jumpSound, 0.5f);//jump sound effect
+            }
+        }
+    }
+    void CheckGround()
+    {
+        if (rigid.velocity.y < 0)
+        {
+            RaycastHit2D t_hit = Physics2D.Raycast(transform.position, Vector2.down, m_distance, m_layerMask);
+
+            if (t_hit)
+            {
+                if (t_hit.transform.CompareTag("Platform"))
+                {
+                    m_jumpCount = 0;
+                }
+            }
+        }
+    }
 
     void Update()
     {
@@ -39,12 +76,14 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = Input.GetAxisRaw("Horizontal") == -1;
 
         //jump
-        if (Input.GetKeyDown(KeyCode.C) && !anim.GetBool("isJumping"))
-        {
-            rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
-            anim.SetBool("isJumping", true); // animation jumping
-            playerAudio.PlayOneShot(jumpSound, 0.5f);//jump sound effect
-        }
+        //if (Input.GetKeyDown(KeyCode.C) && !anim.GetBool("isJumping"))
+        //{
+        //    rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+        //    anim.SetBool("isJumping", true); // animation jumping
+        //    playerAudio.PlayOneShot(jumpSound, 0.5f);//jump sound effect
+        //}
+        TryJump();
+        CheckGround();
 
         //animation walking
         if (rigid.velocity.normalized.x == 0)
