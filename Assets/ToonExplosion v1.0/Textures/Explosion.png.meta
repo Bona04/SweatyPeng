@@ -1,55 +1,19 @@
 fileFormatVersion: 2
-guid: 5e3cc58bb65731d4e96e5c86d301a17e
+guid: c8260d15cb31d3d49a251f7cdb4d1777
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1483665779731714255
-    second: Bomb_0
+      213: 21300000
+    second: Explosion_0
   - first:
-      213: -1902917897002446259
-    second: Bomb_1
+      213: 21300002
+    second: Explosion_1
   - first:
-      213: -5839540051515997725
-    second: Bomb_2
+      213: 21300004
+    second: Explosion_2
   - first:
-      213: -5337159410277229379
-    second: Bomb_3
-  - first:
-      213: 4119226490080697988
-    second: Bomb_4
-  - first:
-      213: -3851982506454002795
-    second: Bomb_5
-  - first:
-      213: 6209065506319696928
-    second: Bomb_6
-  - first:
-      213: -3399856696407936989
-    second: Bomb_7
-  - first:
-      213: 1985883963534080937
-    second: Bomb_8
-  - first:
-      213: 4628270932175567455
-    second: Bomb_9
-  - first:
-      213: -6024620564409628431
-    second: Bomb_10
-  - first:
-      213: 7996123559772295727
-    second: Bomb_11
-  - first:
-      213: 5531716946309243334
-    second: Bomb_12
-  - first:
-      213: 407215636444879582
-    second: Bomb_13
-  - first:
-      213: 663768082219358500
-    second: Bomb_14
-  - first:
-      213: -6181241212211882912
-    second: Bomb_15
+      213: 21300006
+    second: Explosion_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -75,12 +39,12 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: 1
+  textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -105,22 +69,10 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -135,85 +87,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bomb_0
+      name: Explosion_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 133
-        width: 109
-        height: 117
+        x: 0
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 13f20b985d5f86be0800000000000000
-      internalID: -1483665779731714255
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bomb_1
+      name: Explosion_1
       rect:
         serializedVersion: 2
-        x: 142
-        y: 133
-        width: 106
-        height: 117
+        x: 512
+        y: 512
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: d429f68314a7795e0800000000000000
-      internalID: -1902917897002446259
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bomb_2
+      name: Explosion_2
       rect:
         serializedVersion: 2
-        x: 14
-        y: 6
-        width: 107
-        height: 116
+        x: 0
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3e109b92349c5fea0800000000000000
-      internalID: -5839540051515997725
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bomb_3
+      name: Explosion_3
       rect:
         serializedVersion: 2
-        x: 142
-        y: 6
-        width: 106
-        height: 116
+        x: 512
+        y: 0
+        width: 512
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: dbcdac83bc99ee5b0800000000000000
-      internalID: -5337159410277229379
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -221,7 +173,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 

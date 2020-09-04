@@ -13544,6 +13544,9 @@ MonoBehaviour:
   BossNormalAttack: {fileID: 6597108311648154520, guid: e4db6dc31d6d1d646b84523991740238,
     type: 3}
   BossAttackPos: {fileID: 847540629}
+  BombAttack: {fileID: 7761150467997402986, guid: 8958b4e7f742cf14098d50bea3c221bf,
+    type: 3}
+  BombAim: {fileID: 8439393885304490281, guid: a69d53718ce0b484189d2244ddd3c996, type: 3}
 --- !u!1 &1111414157
 GameObject:
   m_ObjectHideFlags: 0
