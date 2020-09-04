@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private AudioSource playerAudio;
 
     public AudioClip jumpSound;
+    public AudioClip hurtedSound;
+    public AudioClip dieSound;
 
     //점프 관련 변수들
     [SerializeField] float m_jumpForce = 0f;
@@ -131,6 +133,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.tag =="Water")
         {
+            playerAudio.PlayOneShot(dieSound, 1.0f);
             //다시 시작하기 버튼 활성화
             gameManager.restartButton.gameObject.SetActive(true);
             //유다이 메시지 띄우기
@@ -145,6 +148,7 @@ public class PlayerController : MonoBehaviour
     }
     void OnDamaged(Vector2 targetPos)
     {
+        playerAudio.PlayOneShot(hurtedSound, 1.0f);
         //health down
         gameManager.HealthDownEnemy();
 
