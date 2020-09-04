@@ -1,0 +1,512 @@
+fileFormatVersion: 2
+guid: d892619b346ff5e47bbe84a68257c2c1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7489009585814028084
+    second: bomb2_0
+  - first:
+      213: -2744358775435010289
+    second: bomb2_1
+  - first:
+      213: -5153887947103641378
+    second: bomb2_2
+  - first:
+      213: -8982794913058672227
+    second: bomb2_3
+  - first:
+      213: 5488592883487553432
+    second: bomb2_4
+  - first:
+      213: 557664573850983712
+    second: bomb2_5
+  - first:
+      213: 6658647036973315434
+    second: bomb2_6
+  - first:
+      213: 7730529781676058050
+    second: bomb2_7
+  - first:
+      213: 3091321580915974233
+    second: bomb2_8
+  - first:
+      213: -726120035530492026
+    second: bomb2_9
+  - first:
+      213: -6287576867095923083
+    second: bomb2_10
+  - first:
+      213: -7231043759077203965
+    second: bomb2_11
+  - first:
+      213: 3630122347434932483
+    second: bomb2_12
+  - first:
+      213: 5901342600430176365
+    second: bomb2_13
+  - first:
+      213: -6651196389534288721
+    second: bomb2_14
+  - first:
+      213: 8426048851896396791
+    second: bomb2_15
+  - first:
+      213: -8128067596921022407
+    second: bomb2_16
+  - first:
+      213: -2748527714473269316
+    second: bomb2_17
+  - first:
+      213: 5961815610750094678
+    second: bomb2_18
+  - first:
+      213: -3771870819766232655
+    second: bomb2_19
+  - first:
+      213: -3959182940830131064
+    second: bomb2_20
+  - first:
+      213: 3546787498503624933
+    second: bomb2_21
+  - first:
+      213: 2260105217323300368
+    second: bomb2_22
+  - first:
+      213: -800752144146925528
+    second: bomb2_23
+  - first:
+      213: -6386809587497385120
+    second: bomb2_24
+  - first:
+      213: 4697700882348597705
+    second: bomb2_25
+  - first:
+      213: 2055064573882488618
+    second: bomb2_26
+  - first:
+      213: 7620555846818882767
+    second: bomb2_27
+  - first:
+      213: -348346176063214967
+    second: bomb2_28
+  - first:
+      213: -8979705006421205284
+    second: bomb2_29
+  - first:
+      213: 7386825715441054875
+    second: bomb2_30
+  - first:
+      213: -4063154535026778046
+    second: bomb2_31
+  - first:
+      213: -6373597652512417532
+    second: bomb2_32
+  - first:
+      213: -4442338627687678132
+    second: bomb2_33
+  - first:
+      213: -7132447037647670826
+    second: bomb2_34
+  - first:
+      213: -3798704639038937918
+    second: bomb2_35
+  - first:
+      213: -3203511609049766497
+    second: bomb2_36
+  - first:
+      213: 750811941668978024
+    second: bomb2_37
+  - first:
+      213: 4888179065605662812
+    second: bomb2_38
+  - first:
+      213: -994677003749069122
+    second: bomb2_39
+  - first:
+      213: -6893950415971668199
+    second: bomb2_40
+  - first:
+      213: -4067518664955425997
+    second: bomb2_41
+  - first:
+      213: 1345049257219085680
+    second: bomb2_42
+  - first:
+      213: -3211436543067478614
+    second: bomb2_43
+  - first:
+      213: 1191836933201832850
+    second: bomb2_44
+  - first:
+      213: -4586675821326965078
+    second: bomb2_45
+  - first:
+      213: -1163252949980719230
+    second: bomb2_46
+  - first:
+      213: -5493856643517723181
+    second: bomb2_47
+  - first:
+      213: 7812054386487924525
+    second: bomb2_48
+  - first:
+      213: 8570611318346060557
+    second: bomb2_49
+  - first:
+      213: -2316877605944129374
+    second: bomb2_50
+  - first:
+      213: 7644706242876587175
+    second: bomb2_51
+  - first:
+      213: 2224814366514675676
+    second: bomb2_52
+  - first:
+      213: -5106751602654176875
+    second: bomb2_53
+  - first:
+      213: 4621589257077038444
+    second: bomb2_54
+  - first:
+      213: -2771483661795078364
+    second: bomb2_55
+  - first:
+      213: -5710382644931670699
+    second: bomb2_56
+  - first:
+      213: 6792042882939225030
+    second: bomb2_57
+  - first:
+      213: -3559844042082054626
+    second: bomb2_58
+  - first:
+      213: 525612248527427920
+    second: bomb2_59
+  - first:
+      213: 813451006153105445
+    second: bomb2_60
+  - first:
+      213: 2619485037995504891
+    second: bomb2_61
+  - first:
+      213: -3088240255181896679
+    second: bomb2_62
+  - first:
+      213: -8753627377786155826
+    second: bomb2_63
+  - first:
+      213: 690102859921687158
+    second: bomb2_64
+  - first:
+      213: -5449318080518624460
+    second: bomb2_65
+  - first:
+      213: 6512615228397203200
+    second: bomb2_66
+  - first:
+      213: -1407489267109766434
+    second: bomb2_67
+  - first:
+      213: 6846314110720882102
+    second: bomb2_68
+  - first:
+      213: -8464638748357974908
+    second: bomb2_69
+  - first:
+      213: 8896929503515648405
+    second: bomb2_70
+  - first:
+      213: -4962638422247450766
+    second: bomb2_71
+  - first:
+      213: -7743451125743237636
+    second: bomb2_72
+  - first:
+      213: 6781694783137582876
+    second: bomb2_73
+  - first:
+      213: 8054501538209741936
+    second: bomb2_74
+  - first:
+      213: 6502405069563437646
+    second: bomb2_75
+  - first:
+      213: -3163970626194258470
+    second: bomb2_76
+  - first:
+      213: -832589220090814591
+    second: bomb2_77
+  - first:
+      213: 1730860198800029555
+    second: bomb2_78
+  - first:
+      213: -2321458015080214000
+    second: bomb2_79
+  - first:
+      213: 2706110279406021312
+    second: bomb2_80
+  - first:
+      213: 2601253809919596141
+    second: bomb2_81
+  - first:
+      213: 7599848040085640815
+    second: bomb2_82
+  - first:
+      213: -2649098762735854417
+    second: bomb2_83
+  - first:
+      213: -3177135195488518739
+    second: bomb2_84
+  - first:
+      213: 8103302384759212312
+    second: bomb2_85
+  - first:
+      213: -8983894885140969472
+    second: bomb2_86
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bomb2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc04f0ec571b11890800000000000000
+      internalID: -7489009585814028084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb2_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f58f5eb341ae9d0800000000000000
+      internalID: -2744358775435010289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb2_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed068b4f736b978b0800000000000000
+      internalID: -5153887947103641378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb2_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d91b3f49e93b65380800000000000000
+      internalID: -8982794913058672227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb2_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8973301d5266b2c40800000000000000
+      internalID: 5488592883487553432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb2_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d153ca9f83db700800000000000000
+      internalID: 557664573850983712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomb2_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a65708b7334486c50800000000000000
+      internalID: 6658647036973315434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
