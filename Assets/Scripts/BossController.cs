@@ -7,7 +7,7 @@ public class BossController : MonoBehaviour
     //Animator anime;
     //public float cooltime;
     //private float curtime;
-    //public GameObject BossNormalAttack;
+    public GameObject BossNormalBullet;
     public Transform BossAttackPos;
     public GameObject missileAim;
     public GameObject BossMissileBullet;
@@ -32,6 +32,10 @@ public class BossController : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            NormalAttack();
+        }
         if (Input.GetKeyDown(KeyCode.W)) //폭탄 공격
         {
             float randomXvalue = Random.Range(100, 114);
@@ -44,6 +48,10 @@ public class BossController : MonoBehaviour
         {
             MissileAttack();
         }
+    }
+    void NormalAttack()
+    {
+        Instantiate(BossNormalBullet, BossAttackPos.position, transform.rotation);
     }
     IEnumerator BombAttackMethod()
     {
