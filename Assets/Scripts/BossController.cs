@@ -5,10 +5,12 @@ using UnityEngine;
 public class BossController : MonoBehaviour
 {
     //Animator anime;
-    public float cooltime;
-    private float curtime;
-    public GameObject BossNormalAttack;
+    //public float cooltime;
+    //private float curtime;
+    //public GameObject BossNormalAttack;
     public Transform BossAttackPos;
+    public GameObject missileAim;
+    public GameObject BossMissileBullet;
 
     public GameObject BombAttack;
     public GameObject BombAim;
@@ -21,6 +23,7 @@ public class BossController : MonoBehaviour
     public AudioClip bombFalling;
     public AudioClip basicShot;
 
+
     void Start()
     {
         //anime = GetComponent<Animator>();
@@ -29,24 +32,17 @@ public class BossController : MonoBehaviour
 
     void Update()
     {
-        if (curtime <= 0)
-        {
-            if (Input.GetKeyDown(KeyCode.Q)) //기본공격
-            {
-                //anime.SetTrigger("NormalAttack");
-                bossAudio.PlayOneShot(basicShot, 0.3f);
-                Instantiate(BossNormalAttack, BossAttackPos.position, transform.rotation);
-                curtime = cooltime;
-            }
-        }
-        curtime -= Time.deltaTime;
-
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W)) //폭탄 공격
         {
             float randomXvalue = Random.Range(100, 114);
             randomXvalueCopy = randomXvalue;
 
             StartCoroutine("BombAttackMethod");
+        }
+
+        if (Input.GetKeyDown(KeyCode.E)) //미사일 공격
+        {
+            MissileAttack();
         }
     }
     IEnumerator BombAttackMethod()
@@ -64,5 +60,21 @@ public class BossController : MonoBehaviour
     {
         bossAudio.PlayOneShot(bombFalling, 1.0f);
         Instantiate(BombAttack, new Vector3(randomXvalueCopy, 4.0f, 0.0f), BombAttack.transform.rotation);
+    }
+
+    void MissileAttack()
+    {
+        StartCoroutine("MissileAimActive");
+    }
+    IEnumerator MissileAimActive()
+    {
+        missileAim.SetActive(true);
+        yield return new WaitForSeconds(2);
+        missileAim.SetActive(false);
+        Instantiate(BossMissileBullet, BossAttackPos.position, transform.rotation);
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(BossMissileBullet, BossAttackPos.position, transform.rotation);
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(BossMissileBullet, BossAttackPos.position, transform.rotation);
     }
 }
