@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public int heart; //체력 수
     public int Ice; //얼음 공격 수
+    public int CutNum; //인트로 컷 수
 
     //UI
     public Image[] UIheart;
@@ -16,7 +17,14 @@ public class GameManager : MonoBehaviour
     public Button restartButton;
     public GameObject titleScreen;
     public Slider BossHpBar;
-    
+
+    public Image[] Cut;
+    public GameObject Intro;
+
+    private void Start()
+    {
+        CutNum = 0;
+    }
     public void HealthDownEnemy() //플레이어 체력 감소
     {
         if (heart > 0) {
@@ -34,7 +42,22 @@ public class GameManager : MonoBehaviour
             UIYouDied.SetActive(true);
         }
 
-            
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (CutNum < 4)
+            {
+                if (Cut[CutNum].gameObject.activeSelf == false)
+                {
+                    Cut[CutNum].gameObject.SetActive(true);
+                    CutNum++;
+                }
+            }
+            if (CutNum == 4)
+            {
+                Intro.SetActive(false);
+            }
+        }
+
     }
     //재시작하기
     public void Restart()
