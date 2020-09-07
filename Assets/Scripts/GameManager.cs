@@ -49,10 +49,10 @@ public class GameManager : MonoBehaviour
                 if (Cut[CutNum].gameObject.activeSelf == false)
                 {
                     Cut[CutNum].gameObject.SetActive(true);
-                    CutNum++;
                 }
             }
-            if (CutNum == 4)
+            CutNum++;
+            if (CutNum == 5)
             {
                 Intro.SetActive(false);
             }
