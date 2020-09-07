@@ -9,6 +9,7 @@ TagManager:
   - normalAttack
   - Platform
   - IceAttack
+  - Dialogue
   layers:
   - Default
   - TransparentFX
