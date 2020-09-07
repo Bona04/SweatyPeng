@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     }
     void TryJump()
     {
-        if (Input.GetKeyDown(KeyCode.C) && !anim.GetBool("isJumping"))
+        if (Input.GetKeyDown(KeyCode.C) /*&& !anim.GetBool("isJumping")*/)
         {
             if (m_jumpCount < m_maxJumpCount)
             {
@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (t_hit.transform.CompareTag("Platform"))
                 {
+                    anim.SetBool("isJumping", false); //점프 고치려고 추가해봄
                     m_jumpCount = 0;
                 }
             }
@@ -111,16 +112,16 @@ public class PlayerController : MonoBehaviour
             rigid.velocity = new Vector2(-maxSpeed, rigid.velocity.y);
         }
         //Landing Platform
-        if (rigid.velocity.y < 0)
-        {
-            Debug.DrawRay(rigid.position, Vector3.down, new Color(0, 1, 0));
-            RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1);
-            if (rayHit.collider != null)
-            {
-                if (rayHit.distance < 0.5f)
-                    anim.SetBool("isJumping", false);
-            }
-        }
+        //if (rigid.velocity.y < 0)
+        //{
+        //    Debug.DrawRay(rigid.position, Vector3.down, new Color(0, 1, 0));
+        //    RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1);
+        //    if (rayHit.collider != null)
+        //    {
+        //        if (rayHit.distance < 0.5f)
+        //            anim.SetBool("isJumping", false);
+        //    }
+        //}
     }
 
     void OnCollisionEnter2D(Collision2D collision)
