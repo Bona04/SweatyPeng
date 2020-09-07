@@ -23,13 +23,18 @@ public class GameManager : MonoBehaviour
             UIheart[heart-1].color = new Color(0, 0, 0, 0.4f);
             heart--;
          }
-        else
+    }
+    void Update()
+    {
+        if(heart <= 0)
         {
             //죽으면 다시 시작하기 버튼 활성화
             restartButton.gameObject.SetActive(true);
             //죽으면 유다이 메시지 띄우기
             UIYouDied.SetActive(true);
         }
+
+            
     }
     //재시작하기
     public void Restart()
@@ -59,11 +64,11 @@ public class GameManager : MonoBehaviour
     }
     public void BossHealthDown()
     {
-        BossHpBar.value -= 0.1f;
+        BossHpBar.value -= 0.01f;
     }
    public void BossHealthDownIce()
     {
-        BossHpBar.value -= 0.2f;
+        BossHpBar.value -= 0.05f;
     }
 
 }

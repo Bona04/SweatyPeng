@@ -139,6 +139,14 @@ public class PlayerController : MonoBehaviour
             //유다이 메시지 띄우기
             gameManager.UIYouDied.SetActive(true);
         }
+        else if(collision.gameObject.layer == 14 || collision.gameObject.layer == 16) //기본공격과 미사일과 충돌 시
+        {
+            OnDamaged(collision.transform.position);
+        }
+        else if(collision.gameObject.layer == 13) //폭탄과 충돌 시
+        {
+            gameManager.heart -= 3; //즉사
+        }
 
     }
     void OffDamaged()

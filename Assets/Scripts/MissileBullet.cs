@@ -12,11 +12,17 @@ public class MissileBullet : MonoBehaviour
     {
         player = GameObject.Find("Player");
         StartCoroutine(followTarget(player));
+        StartCoroutine("DestroyAuto");
     }
 
     void Update()
     {
         transform.Translate(target * speed * Time.deltaTime);
+    }
+    IEnumerator DestroyAuto()
+    {
+        yield return new WaitForSeconds(8);
+        DestroyBullet();
     }
     IEnumerator followTarget(GameObject _obj)
     {
@@ -58,8 +64,9 @@ public class MissileBullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player") //플레이어와 충돌 시
-            //플레이어 체력 깎고 
+        {  
             DestroyBullet(); // 사라지기
+        }
     }
     void DestroyBullet() // 소멸
     {
