@@ -13541,6 +13541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048597f4a76e7894c9a3f7999c60be7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BossNormalBullet: {fileID: 6597108311648154520, guid: e4db6dc31d6d1d646b84523991740238,
+    type: 3}
   BossAttackPos: {fileID: 847540629}
   missileAim: {fileID: 1099611034}
   BossMissileBullet: {fileID: 68897173558631824, guid: ea20bffff594b404d866fd800046c4ca,
