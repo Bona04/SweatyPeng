@@ -23,6 +23,7 @@ public class BossController : MonoBehaviour
     public AudioClip bombFalling;
     public AudioClip basicShot;
 
+    public GameManager gameManager;
 
     void Start()
     {
@@ -84,5 +85,22 @@ public class BossController : MonoBehaviour
         Instantiate(BossMissileBullet, BossAttackPos.position, transform.rotation);
         yield return new WaitForSeconds(0.5f);
         Instantiate(BossMissileBullet, BossAttackPos.position, transform.rotation);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        //기본공격과 충돌
+        if (collision.gameObject.tag == "normalAttack" && gameManager.BossHpBar.value > 0)
+        {
+            //Damaged 
+            gameManager.BossHealthDown();
+            gameManager.FilledIce();  //얼음 차기
+        }
+        //얼음공격과 충돌하면
+        if (collision.gameObject.tag == "IceAttack"  && gameManager.BossHpBar.value > 0)
+        {
+            //피해입기
+            gameManager.BossHealthDownIce();
+        }
     }
 }

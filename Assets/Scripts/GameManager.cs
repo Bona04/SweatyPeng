@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject UIYouDied;
     public Button restartButton;
     public GameObject titleScreen;
+    public Slider BossHpBar;
     
     public void HealthDownEnemy() //플레이어 체력 감소
     {
@@ -55,6 +56,14 @@ public class GameManager : MonoBehaviour
         {
             UIIce[2].fillAmount += 0.2f;
         }
+    }
+    public void BossHealthDown()
+    {
+        BossHpBar.value -= 0.1f;
+    }
+   public void BossHealthDownIce()
+    {
+        BossHpBar.value -= 0.2f;
     }
 
 }
