@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
     {
         CutNum = 0;
     }
-    
     public void HealthDownEnemy() //플레이어 체력 감소
     {
         if (heart > 0) {

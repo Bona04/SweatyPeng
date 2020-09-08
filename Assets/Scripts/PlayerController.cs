@@ -148,7 +148,6 @@ public class PlayerController : MonoBehaviour
         {
             gameManager.heart -= 3; //즉사
         }
-        
 
     }
     void OffDamaged()
