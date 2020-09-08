@@ -16779,7 +16779,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1253731556}
   nextText: {fileID: 1196290397}
   dialoguegroup: {fileID: 1219773319}
-  typingSpeed: 0.1
+  typingSpeed: 0.2
 --- !u!114 &1219773321
 MonoBehaviour:
   m_ObjectHideFlags: 0

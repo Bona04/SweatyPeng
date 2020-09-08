@@ -11,10 +11,15 @@ public class BossSentence : MonoBehaviour
 
         if (collision.gameObject.tag == "Dialogue")
         {
-            DialogueManager.instance.Ondialogue(sentences);
+            if (DialogueManager.instance.dialoguegroup.alpha == 0)
+                DialogueManager.instance.Ondialogue(sentences);
         }
 
     }
-
-    
 }
+
+    /*private void OnMouseDown()
+    {
+        DialogueManager.instance.Ondialogue(sentences);
+    }
+}*/
