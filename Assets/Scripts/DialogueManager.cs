@@ -9,13 +9,14 @@ public class DialogueManager : MonoBehaviour, IPointerDownHandler
 
     public Text dialogueText;
     public GameObject nextText;
+
     public CanvasGroup dialoguegroup;
 
     public Queue<string> sentences;
 
     private string currentSentence;
 
-    public float typingSpeed;
+    public float typingSpeed = 0.1f;
 
     private bool isTyping;
 
