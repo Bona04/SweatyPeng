@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         if (rigid.velocity.y < 0)
         {
             RaycastHit2D t_hit = Physics2D.Raycast(transform.position, Vector2.down, m_distance, m_layerMask);
-
+            //Debug.Log(t_hit.collider.name);
             if (t_hit)
             {
                 if (t_hit.transform.tag == "Platform")
