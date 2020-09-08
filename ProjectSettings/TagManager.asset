@@ -10,6 +10,7 @@ TagManager:
   - Platform
   - IceAttack
   - Dialogue
+  - FloatingPlatform
   layers:
   - Default
   - TransparentFX

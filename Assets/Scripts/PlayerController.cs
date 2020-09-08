@@ -22,9 +22,10 @@ public class PlayerController : MonoBehaviour
     //점프 관련 변수들
     [SerializeField] float m_jumpForce = 0f;
     [SerializeField] int m_maxJumpCount = 0;
-    int m_jumpCount = 0;
+    public int m_jumpCount = 0;
     float m_distance = 0f;
-    [SerializeField] LayerMask m_layerMask = 0;
+    [SerializeField] LayerMask m_layerMask = 10;
+    
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
         //점프관련
         m_distance = GetComponent<CapsuleCollider2D>().bounds.extents.y + 0.05f;
-    }
+}
     void TryJump()
     {
         if (Input.GetKeyDown(KeyCode.C) /*&& !anim.GetBool("isJumping")*/)
@@ -57,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
             if (t_hit)
             {
-                if (t_hit.transform.CompareTag("Platform"))
+                if (t_hit.transform.tag == "Platform")
                 {
                     anim.SetBool("isJumping", false); //점프 고치려고 추가해봄
                     m_jumpCount = 0;

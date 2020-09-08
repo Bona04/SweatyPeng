@@ -25,24 +25,54 @@ public class BossController : MonoBehaviour
 
     public GameManager gameManager;
 
+    public int BossPattern; //패턴 선택
+    public int AttackEnd; //패턴 한개가 끝났는지
+
     void Start()
     {
         //anime = GetComponent<Animator>();
         bossAudio = GetComponent<AudioSource>();
     }
-
+    void Think()
+    {
+        BossPattern = Random.Range(0, 3); //0,1,2
+    }
+    void BossAttackStart()
+    {
+        Think(); //패턴 결정
+        if (BossPattern == 0)
+        {
+            MissileAttack();
+        }
+        else if (BossPattern == 1)
+        {
+            NormalAttack();
+        }
+        else
+        {
+            StartCoroutine("BombAttackMany");
+        }
+        Invoke("BossAttackStart", 4);
+    }
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.R))  //공격 시작!
+        {
+            BossAttackStart();
+        }
+        
         if(Input.GetKeyDown(KeyCode.Q))
         {
+            //NormalAttack();
             NormalAttack();
         }
         if (Input.GetKeyDown(KeyCode.W)) //폭탄 공격
         {
-            float randomXvalue = Random.Range(100, 114);
-            randomXvalueCopy = randomXvalue;
+            //float randomXvalue = Random.Range(100, 114);
+            //randomXvalueCopy = randomXvalue;
 
-            StartCoroutine("BombAttackMethod");
+            //StartCoroutine("BombAttackMethod");
+            StartCoroutine("BombAttackMany");
         }
 
         if (Input.GetKeyDown(KeyCode.E)) //미사일 공격
@@ -52,14 +82,38 @@ public class BossController : MonoBehaviour
     }
     void NormalAttack()
     {
-        Instantiate(BossNormalBullet, BossAttackPos.position, transform.rotation);
+        StartCoroutine("NormalAttackMany");
+        //Instantiate(BossNormalBullet, BossAttackPos.position, transform.rotation);
+    }
+    IEnumerator NormalAttackMany()
+    {
+        for (int k = 0; k < 5; k++)
+        {
+            Instantiate(BossNormalBullet, BossAttackPos.position, transform.rotation);
+            yield return new WaitForSeconds(0.5f);
+        }
     }
     IEnumerator BombAttackMethod()
     {
+        //+2
+        float randomXvalue = Random.Range(100, 114);
+        randomXvalueCopy = randomXvalue;
+       
         InvokeBombAim();
         yield return new WaitForSeconds(2);
         InvokeBomb();
     }
+
+    //++함수
+    IEnumerator BombAttackMany()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            StartCoroutine("BombAttackMethod");
+            yield return new WaitForSeconds(0.7f);
+        }
+    }
+
     void InvokeBombAim ()
     {
         bossAudio.PlayOneShot(aiming, 1.0f);
