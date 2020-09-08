@@ -17,13 +17,23 @@ public class GameManager : MonoBehaviour
     public Button restartButton;
     public GameObject titleScreen;
     public Slider BossHpBar;
+    public GameObject playScreen;
 
     public Image[] Cut;
     public GameObject Intro;
+    public int IntroEndCheckNum;
+
+
+    //인트로 fade out관련 변수들
+    //float time;
+    //public float _fadeTIme = 1f;
 
     private void Start()
     {
         CutNum = 0;
+        Cut[CutNum].gameObject.SetActive(true);
+        CutNum = 1;
+        IntroEndCheckNum = 0;
     }
     public void HealthDownEnemy() //플레이어 체력 감소
     {
@@ -54,11 +64,23 @@ public class GameManager : MonoBehaviour
             CutNum++;
             if (CutNum == 5)
             {
-                Intro.SetActive(false);
+                IntroEndCheckNum = 1;
             }
         }
 
     }
+    //void IntroFadeOut()
+    //{
+    //    if(time < _fadeTIme)
+    //    {
+    //        Cut[CutNum].color = new Color(1, 1, 1, 1f - time / _fadeTIme);
+    //    }
+    //    else
+    //    {
+    //        time = 0;
+    //        Cut[CutNum].gameObject.SetActive(false);
+    //    }
+    //}
     //재시작하기
     public void Restart()
     {
@@ -68,6 +90,7 @@ public class GameManager : MonoBehaviour
     public void GameStart()
     {
         titleScreen.gameObject.SetActive(false);
+        playScreen.gameObject.SetActive(true);
     }
 
     public void FilledIce()
