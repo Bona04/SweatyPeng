@@ -6,11 +6,10 @@ public class BossBombAttack : MonoBehaviour
 {
     public GameObject explosionParticle;
 
-    // private AudioSource bombAudio;//여기서 안할거면 의미 없는 코드;
+     //private AudioSource bombAudio;//여기서 안할거면 의미 없는 코드;
 
     //public AudioClip bombExplosion;//폭탄 터질 때 소리
 
-    // Start is called before the first frame update
     void Start()
     {
         //bombAudio = GetComponent<AudioSource>();//여기서 안할거면 의미 없는 코드;

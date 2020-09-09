@@ -144,9 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c36379d9cf9f59478899046385c19e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 6
   player: {fileID: 0}
-  missileExplosion: {fileID: 8300000, guid: 8401456349c492a489ed90469e317e43, type: 3}
 --- !u!95 &1944629027
 Animator:
   serializedVersion: 3

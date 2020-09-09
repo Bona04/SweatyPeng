@@ -25,7 +25,14 @@ public class PlayerController : MonoBehaviour
     public int m_jumpCount = 0;
     float m_distance = 0f;
     [SerializeField] LayerMask m_layerMask = 10;
-    
+
+    //미사일 맞는 소리
+    private AudioSource missileAudio;//여기서 안할거면 의미 없는 코드;
+    public AudioClip missileExplosion;//플레이어가 미사일 맞을 때 소리
+
+    //폭탄맞는소리 실험
+    //private AudioSource bombAudio;//여기서 안할거면 의미 없는 코드;
+   // public AudioClip bombExplosion;//폭탄 터질 때 소리
 
     void Start()
     {
@@ -36,7 +43,12 @@ public class PlayerController : MonoBehaviour
 
         //점프관련
         m_distance = GetComponent<CapsuleCollider2D>().bounds.extents.y + 0.05f;
-}
+
+        missileAudio = GetComponent<AudioSource>();  //미사일 맞는 소리
+
+        //폭탄맞는소리실험
+        //bombAudio = GetComponent<AudioSource>();//여기서 안할거면 의미 없는 코드;
+    }
     void TryJump()
     {
         if (Input.GetKeyDown(KeyCode.C) /*&& !anim.GetBool("isJumping")*/)
@@ -130,6 +142,7 @@ public class PlayerController : MonoBehaviour
         //적과 충돌
         if (collision.gameObject.tag == "Enemy")
         {
+            playerAudio.PlayOneShot(hurtedSound, 1.0f); //기본 맞는소리
             //Damaged 
             OnDamaged(collision.transform.position);
         }
@@ -141,13 +154,25 @@ public class PlayerController : MonoBehaviour
             //유다이 메시지 띄우기
             gameManager.UIYouDied.SetActive(true);
         }
-        else if(collision.gameObject.layer == 14 || collision.gameObject.layer == 16) //기본공격과 미사일과 충돌 시
+        else if(collision.gameObject.layer == 16) //기본공격과 충돌 시
         {
+            playerAudio.PlayOneShot(hurtedSound, 1.0f);  //기본 맞는 소리
             OnDamaged(collision.transform.position);
         }
         else if(collision.gameObject.layer == 13) //폭탄과 충돌 시
         {
+            //bombAudio.PlayOneShot(bombExplosion, 1.0f);//폭탄 터질 때 소리 함수 호출
             gameManager.heart -= 3; //즉사
+        }
+        else if(collision.gameObject.tag =="FloatingPlatform")
+        {
+            anim.SetBool("isJumping", false); //점프 고치려고 추가해봄
+            m_jumpCount = 0;
+        }
+        else if(collision.gameObject.layer == 14)
+        {
+            missileAudio.PlayOneShot(missileExplosion, 1.0f);//플레이어가 미사일 맞을 때 소리 함수
+            OnDamaged(collision.transform.position);
         }
 
     }
@@ -158,7 +183,7 @@ public class PlayerController : MonoBehaviour
     }
     void OnDamaged(Vector2 targetPos)
     {
-        playerAudio.PlayOneShot(hurtedSound, 1.0f);
+        //playerAudio.PlayOneShot(hurtedSound, 1.0f);
         //health down
         gameManager.HealthDownEnemy();
 

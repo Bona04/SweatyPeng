@@ -75,8 +75,8 @@ public class BossController : MonoBehaviour
             //float randomXvalue = Random.Range(100, 114);
             //randomXvalueCopy = randomXvalue;
 
-            //StartCoroutine("BombAttackMethod");
-            StartCoroutine("BombAttackMany");
+            StartCoroutine("BombAttackMethod");
+            //StartCoroutine("BombAttackMany");
         }
 
         if (Input.GetKeyDown(KeyCode.E)) //미사일 공격
