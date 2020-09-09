@@ -6,14 +6,14 @@ public class BossBombAttack : MonoBehaviour
 {
     public GameObject explosionParticle;
 
-    private AudioSource bombAudio;
+    // private AudioSource bombAudio;//여기서 안할거면 의미 없는 코드;
 
-    public AudioClip bombExplosion;
+    //public AudioClip bombExplosion;//폭탄 터질 때 소리
 
     // Start is called before the first frame update
     void Start()
     {
-        bombAudio = GetComponent<AudioSource>();
+        //bombAudio = GetComponent<AudioSource>();//여기서 안할거면 의미 없는 코드;
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class BossBombAttack : MonoBehaviour
     {
         if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Water" || collision.gameObject.tag == "Player")
         {
-            bombAudio.PlayOneShot(bombExplosion, 1.0f);
+            //bombAudio.PlayOneShot(bombExplosion, 1.0f);//폭탄 터질 때 소리 함수 호출
             Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
             Destroy(gameObject);
 

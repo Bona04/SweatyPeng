@@ -20,8 +20,12 @@ public class BossController : MonoBehaviour
     private AudioSource bossAudio;
 
     public AudioClip aiming;
-    public AudioClip bombFalling;
     public AudioClip basicShot;
+    public AudioClip bomb;
+    public AudioClip missileAiming;
+    public AudioClip youWin;
+    public AudioClip bossHurt;
+    public AudioClip bossDIe;
 
     public GameManager gameManager;
 
@@ -82,6 +86,7 @@ public class BossController : MonoBehaviour
     }
     void NormalAttack()
     {
+        bossAudio.PlayOneShot(basicShot, 0.2f);
         StartCoroutine("NormalAttackMany");
         //Instantiate(BossNormalBullet, BossAttackPos.position, transform.rotation);
     }
@@ -102,6 +107,7 @@ public class BossController : MonoBehaviour
         InvokeBombAim();
         yield return new WaitForSeconds(2);
         InvokeBomb();
+        //bossAudio.PlayOneShot(bomb, 1.0f);
     }
 
     //++함수
@@ -121,12 +127,13 @@ public class BossController : MonoBehaviour
     }
     void InvokeBomb ()
     {
-        bossAudio.PlayOneShot(bombFalling, 1.0f);
+        
         Instantiate(BombAttack, new Vector3(randomXvalueCopy, 4.0f, 0.0f), BombAttack.transform.rotation);
     }
 
     void MissileAttack()
     {
+        bossAudio.PlayOneShot(missileAiming, 0.1f);
         StartCoroutine("MissileAimActive");
     }
     IEnumerator MissileAimActive()
@@ -144,17 +151,31 @@ public class BossController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         //기본공격과 충돌
-        if (collision.gameObject.tag == "normalAttack" && gameManager.BossHpBar.value > 0)
+        if (collision.gameObject.tag == "normalAttack" /*&& gameManager.BossHpBar.value > 0*/)
         {
             //Damaged 
             gameManager.BossHealthDown();
             gameManager.FilledIce();  //얼음 차기
+            bossAudio.PlayOneShot(bossHurt, 1.0f);
+            if (gameManager.BossHpBar.value <=0)
+            {
+                bossAudio.PlayOneShot(bossDIe, 1.0f);
+                bossAudio.PlayOneShot(youWin, 1.0f);
+                gameManager.UIYouWin.SetActive(true);
+            }
         }
         //얼음공격과 충돌하면
-        if (collision.gameObject.tag == "IceAttack"  && gameManager.BossHpBar.value > 0)
+        if (collision.gameObject.tag == "IceAttack"  /*&& gameManager.BossHpBar.value > 0*/)
         {
             //피해입기
             gameManager.BossHealthDownIce();
+            bossAudio.PlayOneShot(bossHurt, 1.0f);
+            if (gameManager.BossHpBar.value <= 0)
+            {
+                bossAudio.PlayOneShot(bossDIe, 1.0f);
+                bossAudio.PlayOneShot(youWin, 1.0f);
+                gameManager.UIYouWin.SetActive(true);
+            }
         }
     }
 }
