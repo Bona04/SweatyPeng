@@ -6,13 +6,17 @@ public class BossBombAttack : MonoBehaviour
 {
     public GameObject explosionParticle;
 
+<<<<<<< HEAD
      //private AudioSource bombAudio;//여기서 안할거면 의미 없는 코드;
+=======
+    private AudioSource bombAudio;
+>>>>>>> parent of 4cab7c7... 뭐 이것저것..
 
-    //public AudioClip bombExplosion;//폭탄 터질 때 소리
+    public AudioClip bombExplosion;
 
     void Start()
     {
-        //bombAudio = GetComponent<AudioSource>();//여기서 안할거면 의미 없는 코드;
+        bombAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,7 +28,7 @@ public class BossBombAttack : MonoBehaviour
     {
         if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Water" || collision.gameObject.tag == "Player")
         {
-            //bombAudio.PlayOneShot(bombExplosion, 1.0f);//폭탄 터질 때 소리 함수 호출
+            bombAudio.PlayOneShot(bombExplosion, 1.0f);
             Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
             Destroy(gameObject);
 
