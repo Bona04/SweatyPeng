@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log(t_hit.collider.name);
             if (t_hit)
             {
+                Debug.Log(t_hit.transform.gameObject.name);
                 if (t_hit.transform.tag == "Platform")
                 {
                     anim.SetBool("isJumping", false); //점프 고치려고 추가해봄
