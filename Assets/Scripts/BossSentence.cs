@@ -6,10 +6,11 @@ public class BossSentence : MonoBehaviour
 {
     public string[] sentences;
 
+    public GameManager gameManager;
     void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.tag == "Dialogue")
+        if (collision.gameObject.tag == "Dialogue" && gameManager.BossStart == 0)
         {
             if (DialogueManager.instance.dialoguegroup.alpha == 0)
                 DialogueManager.instance.Ondialogue(sentences);

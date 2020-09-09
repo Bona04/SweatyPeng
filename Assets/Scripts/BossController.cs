@@ -61,7 +61,8 @@ public class BossController : MonoBehaviour
         if(/*Input.GetKeyDown(KeyCode.R)*/ gameManager.BossStart==1)  //공격 시작!
         {
             BossAttackStart();
-            gameManager.BossStart = 0;
+            gameManager.BossStart = 2;
+            gameManager.BossHpBar.gameObject.SetActive(true);
         }
         
         if(Input.GetKeyDown(KeyCode.Q))

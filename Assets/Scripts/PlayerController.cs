@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour
             //bombAudio.PlayOneShot(bombExplosion, 1.0f);//폭탄 터질 때 소리 함수 호출
             gameManager.heart -= 3; //즉사
         }
-        else if(collision.gameObject.tag =="FloatingPlatform")
+        else if(collision.gameObject.layer == 15) //공중플랫폼 닿는경우
         {
             anim.SetBool("isJumping", false); //점프 고치려고 추가해봄
             m_jumpCount = 0;

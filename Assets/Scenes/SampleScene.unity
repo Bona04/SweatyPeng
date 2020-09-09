@@ -1851,9 +1851,9 @@ GameObject:
   - component: {fileID: 142076819}
   - component: {fileID: 142076821}
   - component: {fileID: 142076820}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: New Sprite (8)
-  m_TagString: Platform
+  m_TagString: FloatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10890,7 +10890,6 @@ Transform:
   - {fileID: 882514128}
   - {fileID: 454333246}
   - {fileID: 1940066020}
-  - {fileID: 1251061207}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11196,9 +11195,9 @@ GameObject:
   - component: {fileID: 806454464}
   - component: {fileID: 806454466}
   - component: {fileID: 806454465}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: New Sprite (3)
-  m_TagString: Platform
+  m_TagString: FloatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12146,9 +12145,9 @@ GameObject:
   - component: {fileID: 926376264}
   - component: {fileID: 926376266}
   - component: {fileID: 926376265}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: New Sprite (7)
-  m_TagString: Platform
+  m_TagString: FloatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12254,9 +12253,9 @@ GameObject:
   - component: {fileID: 929638755}
   - component: {fileID: 929638757}
   - component: {fileID: 929638756}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: New Sprite (5)
-  m_TagString: Platform
+  m_TagString: FloatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14526,7 +14525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097430283}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -195.04, y: -250.17, z: 0}
+  m_LocalPosition: {x: -191.16, y: -249.97, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 847540629}
@@ -14755,6 +14754,7 @@ MonoBehaviour:
   sentences:
   - "\uB124\uAC00 \uBC14\uB85C \uADF8 \uC720\uBA85\uD55C \uD3AD\uADC4\uC774\uAD70.
     \uB108\uB97C \uC7A1\uC544 \uD55C \uBAAB \uCC59\uACA8\uC57C\uACA0\uC5B4..!"
+  gameManager: {fileID: 0}
 --- !u!1 &1099611034
 GameObject:
   m_ObjectHideFlags: 0
@@ -15623,9 +15623,9 @@ GameObject:
   - component: {fileID: 1153858814}
   - component: {fileID: 1153858816}
   - component: {fileID: 1153858815}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: New Sprite (1)
-  m_TagString: Platform
+  m_TagString: FloatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17437,11 +17437,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251061206}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -198.105, y: -249.2262, z: 1}
+  m_LocalPosition: {x: 109.860214, y: 0.032852173, z: 116}
   m_LocalScale: {x: 2, y: 1.4, z: 1}
   m_Children: []
-  m_Father: {fileID: 756019402}
-  m_RootOrder: 6
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1251061208
 SpriteRenderer:
@@ -21119,9 +21119,9 @@ GameObject:
   - component: {fileID: 1514177052}
   - component: {fileID: 1514177054}
   - component: {fileID: 1514177053}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: New Sprite
-  m_TagString: Dialogue
+  m_TagString: FloatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22269,9 +22269,9 @@ GameObject:
   - component: {fileID: 1616991190}
   - component: {fileID: 1616991192}
   - component: {fileID: 1616991191}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: New Sprite (2)
-  m_TagString: Platform
+  m_TagString: FloatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22809,9 +22809,9 @@ GameObject:
   - component: {fileID: 1659365552}
   - component: {fileID: 1659365554}
   - component: {fileID: 1659365553}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: New Sprite (4)
-  m_TagString: Platform
+  m_TagString: FloatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25389,7 +25389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848250996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 105, y: 2, z: 0}
+  m_LocalPosition: {x: 53, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 306246704}
@@ -25580,6 +25580,7 @@ MonoBehaviour:
   sentences:
   - "\uB124\uAC00 \uBC14\uB85C \uADF8 \uC720\uBA85\uD55C \uD3AD\uADC4\uC774\uAD70.
     \uB108\uB97C \uC7A1\uC544 \uD55C \uBAAB \uCC59\uACA8\uC57C\uACA0\uC5B4..!"
+  gameManager: {fileID: 2077099876}
 --- !u!1 &1848591881
 GameObject:
   m_ObjectHideFlags: 0
@@ -26668,9 +26669,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1940066020}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: FloatingPlatform
-  m_TagString: Platform
+  m_TagString: FloatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28249,9 +28250,9 @@ GameObject:
   - component: {fileID: 2005333657}
   - component: {fileID: 2005333659}
   - component: {fileID: 2005333658}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: New Sprite (6)
-  m_TagString: Platform
+  m_TagString: FloatingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
