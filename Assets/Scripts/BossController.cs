@@ -28,6 +28,8 @@ public class BossController : MonoBehaviour
     public int BossPattern; //패턴 선택
     public int AttackEnd; //패턴 한개가 끝났는지
 
+
+
     void Start()
     {
         //anime = GetComponent<Animator>();
@@ -56,9 +58,10 @@ public class BossController : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))  //공격 시작!
+        if(/*Input.GetKeyDown(KeyCode.R)*/ gameManager.BossStart==1)  //공격 시작!
         {
             BossAttackStart();
+            gameManager.BossStart = 0;
         }
         
         if(Input.GetKeyDown(KeyCode.Q))

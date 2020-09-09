@@ -28,12 +28,16 @@ public class GameManager : MonoBehaviour
     //float time;
     //public float _fadeTIme = 1f;
 
+    //대화창 꺼지는 시점 체크 변수
+    public int BossStart;
+
     private void Start()
     {
         CutNum = 0;
         Cut[CutNum].gameObject.SetActive(true);
         CutNum = 1;
         IntroEndCheckNum = 0;
+        BossStart = 0;
     }
     public void HealthDownEnemy() //플레이어 체력 감소
     {

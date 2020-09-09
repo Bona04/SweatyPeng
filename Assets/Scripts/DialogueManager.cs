@@ -21,12 +21,16 @@ public class DialogueManager : MonoBehaviour, IPointerDownHandler
     private bool isTyping;
 
     public static DialogueManager instance;
+
+    //보스맵 시작 확인하려고 가져옴
+    public GameManager gameManager;
+
     private void Awake()
     {
         instance = this;
     }
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         sentences = new Queue<string>();
@@ -59,6 +63,7 @@ public class DialogueManager : MonoBehaviour, IPointerDownHandler
         {
             dialoguegroup.alpha = 0;
             dialoguegroup.blocksRaycasts = false;
+            gameManager.BossStart = 1;
         }
     }
 
