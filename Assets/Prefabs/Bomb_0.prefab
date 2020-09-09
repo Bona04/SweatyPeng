@@ -157,6 +157,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionParticle: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  bombExplosion: {fileID: 8300000, guid: fc96116dc3c141440aabb5605744fea2, type: 3}
+>>>>>>> parent of 4cab7c7... 뭐 이것저것..
 =======
   bombExplosion: {fileID: 8300000, guid: fc96116dc3c141440aabb5605744fea2, type: 3}
 >>>>>>> parent of 4cab7c7... 뭐 이것저것..

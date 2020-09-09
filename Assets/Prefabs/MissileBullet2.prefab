@@ -145,7 +145,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   speed: 6
+=======
+  speed: 3
+>>>>>>> parent of 4cab7c7... 뭐 이것저것..
 =======
   speed: 3
 >>>>>>> parent of 4cab7c7... 뭐 이것저것..
