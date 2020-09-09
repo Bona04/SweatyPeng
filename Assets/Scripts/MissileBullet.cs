@@ -8,15 +8,8 @@ public class MissileBullet : MonoBehaviour
     public GameObject player;
     private Vector3 target;
 
-    //private AudioSource missileAudio;//여기서 안할거면 의미 없는 코드;
-
-    //public AudioClip missileExplosion;//플레이어가 미사일 맞을 때 소리
-
     void Start()
     {
-
-        //missileAudio = GetComponent<AudioSource>();//여기서 안할거면 의미 없는 코드;
-
         player = GameObject.Find("Player");
         StartCoroutine(followTarget(player));
         StartCoroutine("DestroyAuto");
@@ -71,8 +64,7 @@ public class MissileBullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player") //플레이어와 충돌 시
-        {
-            //missileAudio.PlayOneShot(missileExplosion, 1.0f);//플레이어가 미사일 맞을 때 소리 함수
+        {  
             DestroyBullet(); // 사라지기
         }
     }

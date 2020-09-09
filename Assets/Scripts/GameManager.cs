@@ -18,16 +18,11 @@ public class GameManager : MonoBehaviour
     public GameObject titleScreen;
     public Slider BossHpBar;
     public GameObject playScreen;
-    public GameObject UIYouWin;
 
     public Image[] Cut;
     public GameObject Intro;
     public int IntroEndCheckNum;
 
-    private AudioSource gameManagerAudio;
-
-    public AudioClip druming;
-    public AudioClip snap;
 
     //인트로 fade out관련 변수들
     //float time;
@@ -35,10 +30,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        gameManagerAudio = GetComponent<AudioSource>();
-
         CutNum = 0;
-        gameManagerAudio.PlayOneShot(druming, 1.0f);
         Cut[CutNum].gameObject.SetActive(true);
         CutNum = 1;
         IntroEndCheckNum = 0;
@@ -66,10 +58,6 @@ public class GameManager : MonoBehaviour
             {
                 if (Cut[CutNum].gameObject.activeSelf == false)
                 {
-                    
-                    if (CutNum==3) gameManagerAudio.PlayOneShot(snap, 0.5f);
-                    else gameManagerAudio.PlayOneShot(druming, 1.0f);
-
                     Cut[CutNum].gameObject.SetActive(true);
                 }
             }

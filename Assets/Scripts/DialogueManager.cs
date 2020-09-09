@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour, IPointerDownHandler
 
     private string currentSentence;
 
-    public float typingSpeed;
+    public float typingSpeed = 0.2f;
 
     private bool isTyping;
 
@@ -59,7 +59,6 @@ public class DialogueManager : MonoBehaviour, IPointerDownHandler
         {
             dialoguegroup.alpha = 0;
             dialoguegroup.blocksRaycasts = false;
-            ///////////////////////////////////////////////////////여기가 대화창 비활성화시키는 곳임/////////////////////////////////////////////////////////////////////////////////데헷><
         }
     }
 
