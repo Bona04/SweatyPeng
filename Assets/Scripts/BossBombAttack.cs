@@ -6,16 +6,14 @@ public class BossBombAttack : MonoBehaviour
 {
     public GameObject explosionParticle;
 
-//<<<<<<< HEAD
-//     //private AudioSource bombAudio;//여기서 안할거면 의미 없는 코드;
-//=======
-//    private AudioSource bombAudio;
-//>>>>>>> parent of 4cab7c7... 뭐 이것저것..
+
+   //private AudioSource bombAudio;//여기서 안할거면 의미 없는 코드;
+
 
 //    public AudioClip bombExplosion;
 
     void Start()
-    {
+    { 
         //bombAudio = GetComponent<AudioSource>();
     }
 
@@ -27,7 +25,7 @@ public class BossBombAttack : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "Water" || collision.gameObject.tag == "Player")
-        {
+        { 
             //bombAudio.PlayOneShot(bombExplosion, 1.0f);
             Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
             Destroy(gameObject);
