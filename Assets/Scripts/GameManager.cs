@@ -48,6 +48,11 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
+        //보스체력바 나오기
+        if(BossStart==1)
+        {
+            BossHpBar.gameObject.SetActive(true);
+        }
         if(heart <= 0)
         {
             //죽으면 다시 시작하기 버튼 활성화
